@@ -1,20 +1,13 @@
 extends layout
 
 block content
-  div
-    h2 My Blog
-    ul
-      li
-        a(href='/') Home
-      li
-        a(href='/addItem') Add a new post
+	div
+		a(href='/') Home
+		|  
+		a(href='/addItem') New
+		|  
+		a(href='/search') Search
 
-    div(ng-view)
+		div(ng-view)
 
-  script(src='js/lib/angular/angular.js')
-  script(src='js/lib/angular-route/angular-route.js')
-  script(src='js/app.js')
-  script(src='js/services.js')
-  script(src='js/controllers.js')
-  script(src='js/filters.js')
-  script(src='js/directives.js')
+	

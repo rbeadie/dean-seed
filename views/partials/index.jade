@@ -1,9 +1,16 @@
 p There are {{items.length}} items
-div(ng-repeat='item in items')
-  h3 {{item.title}}
-  div {{item.text}}
-  a(href='readItem/{{item.id}}') More
-  |  - 
-  a(href='editItem/{{item.id}}') Edit
-  |  - 
-  a(href='deleteItem/{{item.id}}') Delete
+div.container
+	div.table-responsive
+		table.table
+			tr
+				th
+				th
+				th(ng-click="sort('Name')")
+					label(for='Name') Name
+			tr(ng-repeat="item in items | orderBy:sortCol:sortDesc")
+				td
+					a(href='editItem/{{item.id}}') Edit
+					|  - 
+					a(href='deleteItem/{{item.id}}') Delete						
+				td
+					{{item.Name}}

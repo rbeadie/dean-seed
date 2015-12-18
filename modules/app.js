@@ -28,15 +28,6 @@ app.use(express.static(pkg.resolve('public')));
 app.set('views', pkg.resolve('views'));
 app.set('view engine', 'jade');
 
-// //Configure authentication
-// var session = require('express-session'),
-//     cookieParser = require('cookie-parser'),
-//     passport = require('passport');  
-// app.use(cookieParser());
-// app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: false }));
-// app.use(passport.initialize());
-// app.use(passport.session());
-
 // Routes
 var routes = require('../routes');
 app.get('/', routes.index);

@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp', ['ngRoute', 'myApp.filters', 'myApp.services', 'myApp.directives']).
-  config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+var app = angular.module('myApp', ['ui.bootstrap', 'ngRoute', 'ngCookies', 'myApp.filters', 'myApp.services', 'myApp.directives']);
+
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
         templateUrl: 'partials/index',
         controller: IndexCtrl
       }).
       when('/addItem', {
-        templateUrl: 'partials/addItem',
-        controller: AddItemCtrl
+        redirectTo: '/editItem/0'
       }).
       when('/readItem/:id', {
         templateUrl: 'partials/readItem',
@@ -23,8 +23,14 @@ angular.module('myApp', ['ngRoute', 'myApp.filters', 'myApp.services', 'myApp.di
         templateUrl: 'partials/deleteItem',
         controller: DeleteItemCtrl
       }).
+      when('/search', {
+        templateUrl: 'partials/search',
+        controller: SearchCtrl
+      }).
       otherwise({
         redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
-  }]);
+  }])
+  .controller('MainCtrl', ['$scope', '$http', '$uibModal', '$timeout', '$cookies', '$cookieStore', MainCtrl]);
+;

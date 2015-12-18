@@ -8,6 +8,7 @@ Clone the repository, then run:
 
 npm install
 bower install
+gulp
 
 ### Running the app
 
@@ -22,10 +23,11 @@ Just fetch the changes and merge them into your project with git.
 
 ## Directory Layout
     
-    .bowerrc            --> tells bower where to install
     app.js              --> app start
     bower.json          --> bower package list
+    gulpfile.js         --> gulp start
     package.json        --> npm package list
+    bower_components    --> bower install location
     modules/            --> modules used for interacting with database
       app.js            --> app config
       config.js         --> config variables

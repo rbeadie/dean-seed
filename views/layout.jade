@@ -1,9 +1,41 @@
-doctype
+doctype 
 html(ng-app="myApp")
-  head
-    meta(charset='utf8')
-    base(href='/')
-    title Angular Express Seed App
-    link(rel='stylesheet', href='/css/app.css')
-  body
-    block content
+	head
+		meta(charset='utf8')
+		base(href='/')
+		title DocumentDB Angular Express Seed App
+		link(rel='stylesheet', href='lib/third-party.css')
+		link(rel='stylesheet', href='lib/webapp.css')
+	body
+		nav.navbar.navbar-inverse.navbar-static-top
+			a(href='/')
+				div.row
+					div.col-sm-3.col-md-3.col-lg-2.col-xs-4
+						img.img-responsive(src='/images/logo-horizontal.png', href='/')
+					div(ng-controller="MainCtrl").col-sm-8.col-md-8.col-lg-9.col-xs-4
+						span.navbar-brand.navbar-right #{title}			
+							span(ng-click='showSplash()').glyphicon.glyphicon-question-sign
+		div.container
+			block content
+
+		div.footer
+			br
+
+	script(src='lib/third-party.js')
+	script(src='lib/webapp.js')
+
+script(type='text/ng-template', id='welcomeSplash.html')
+	div.modal-header
+		h4.modal-title Welcome!
+	div.modal-body(style='font-style: normal')
+		dl
+			dt Tips and Hints
+			dd
+				p.
+					To hide this window at startup, uncheck the check box below labeled "Show this window at startup". To open this window at any time, click the <span class="badge">?</span> icon in the upper right hand corner of the screen. 
+
+	div.modal-footer
+		h6 Show this window at startup 
+			input(type='checkbox', ng-model='showStartupSplash', value='showStartupSplash')
+		p
+			button.btn(ng-click='ok()') OK			
