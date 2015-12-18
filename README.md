@@ -7,14 +7,16 @@ DEAN stack seed project, based on the [Angular Express Seed](https://github.com/
 Clone the repository, then run:
 
 npm install
+
 bower install
+
 gulp
 
 ### Running the app
 
-Runs like a typical express app:
+Type:
 
-    node app.js
+    npm start
 
 ### Receiving updates from upstream
 
@@ -35,17 +37,21 @@ Just fetch the changes and merge them into your project with git.
       dobdbutils.js     --> DocumentDB connection utils
       server.js         --> start file called by app start
     public/             --> all of the files to be used in on the client side
-      css/              --> css files
-        app.css         --> default stylesheet
-      images/           --> image files
-      js/               --> javascript files
+      app/               --> javascript files
         app.js          --> declare top-level app module
         controllers.js  --> application controllers
         directives.js   --> custom angular directives
         filters.js      --> custom angular filters
         services.js     --> custom angular services
-        lib/            --> destination folder for bower components
-     routes/
+      css/              --> css files
+        app.css         --> default stylesheet
+      images/           --> image files
+      lib/              --> destination folder for gulp build components
+        third-party.css --> built by gulp
+        third-party.js  --> built by gulp
+        webapp.css      --> built by gulp
+        webapp.js       --> built by gulp
+    routes/
       index.js          --> route for serving HTML pages and partials
     views/
       index.jade        --> main page for app
